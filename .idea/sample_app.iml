@@ -12,6 +12,12 @@
   <component name="GemRequirementsHolder" version="2">
     <requirement>
       <requirement>
+        <dependency name="factory_girl" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source from="config/environments/test.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="rack" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
       <source manual="true" />
@@ -74,6 +80,7 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] webrat (v0.7.1, /home/hava/.rvm/gems/ruby-1.8.7-p249/gems/webrat-0.7.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rack-test (v0.5.4, /home/hava/.rvm/gems/ruby-1.8.7-p249/gems/rack-test-0.5.4)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] nokogiri (v1.4.2, /home/hava/.rvm/gems/ruby-1.8.7-p249/gems/nokogiri-1.4.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] factory_girl (v1.2.3, /home/hava/.rvm/gems/ruby-1.8.7-p249/gems/factory_girl-1.2.3)" level="application" />
   </component>
 </module>
 
