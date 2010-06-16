@@ -6,5 +6,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
+  filter_parameter_logging :password
+
+  # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 end
