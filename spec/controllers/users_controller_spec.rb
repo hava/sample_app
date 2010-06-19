@@ -33,8 +33,19 @@ describe UsersController do
       get :new
       response.should have_tag("input[name=?][type=?]", "user[password_confirmation]", "password")
     end
-  end
 
+    describe "Signed in users" do
+      before(:each) do
+        @user = test_sign_in(Factory(:user))
+        test_sign_in @user
+
+      end
+      it "should redirect to root if signed in" do
+        get :new
+        response.should redirect_to(root_path)
+      end
+    end
+  end
 
   describe "GET 'show'" do
 
@@ -63,6 +74,8 @@ describe UsersController do
       get :show, :id => @user
       response.should have_tag("h2>img", :class => "gravatar")
     end
+
+
   end
 
   describe "POST 'create'" do
@@ -111,6 +124,20 @@ describe UsersController do
       it "should sign the user in" do
         post :create, :user => @attr
         controller.should be_signed_in
+      end
+    end
+
+    describe "Signed in users" do
+      before(:each) do
+        @user = test_sign_in(Factory(:user))
+        test_sign_in @user
+
+      end
+      it "should redirect to root if signed in" do
+        @attr = {:name => "New User", :email => "user@example.com",
+                 :password => "foobar", :password_confirmation => "foobar"}
+        post :create, :user => @attr
+        response.should redirect_to(root_path)
       end
     end
   end
@@ -272,9 +299,17 @@ describe UsersController do
         response.should have_tag("a[href=?]", "/users?page=2", "2")
         response.should have_tag("a[href=?]", "/users?page=2", "Next &raquo;")
       end
+
+      it "should not show for non-admin user" do
+        get :index
+        @users.each do |user|
+          response.should_not have_tag("a[href=?]", "/users/#{user.id}", "delete")
+        end
+      end
     end
 
   end
+
   describe "DELETE 'destroy'" do
 
     before(:each) do
@@ -299,18 +334,24 @@ describe UsersController do
     describe "as an admin user" do
 
       before(:each) do
-        admin = Factory(:user, :email => "admin@example.com", :admin => true)
-        test_sign_in(admin)
-        User.should_receive(:find).with(@user).and_return(@user)
-        @user.should_receive(:destroy).and_return(@user)
+        @admin = Factory(:user, :email => "admin@example.com", :admin => true)
+        test_sign_in(@admin)
       end
 
       it "should destroy the user" do
+        User.should_receive(:find).with(@user).and_return(@user)
+        @user.should_receive(:destroy).and_return(@user)
+        name = @user.name
         delete :destroy, :id => @user
+        response.should redirect_to(users_path)
+        response.should_not have_tag("li", name)
+      end
+
+      it "should not destroy yourself" do
+        User.should_receive(:find).with(@admin).and_return(@admin)
+        delete :destroy, :id => @admin
         response.should redirect_to(users_path)
       end
     end
   end
-
-
 end
