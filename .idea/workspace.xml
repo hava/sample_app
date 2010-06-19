@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="d83ceca4-a3f7-4729-9e72-16ed6f0ef440" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/new.html.erb" afterPath="$PROJECT_DIR$/app/views/users/new.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/controllers/users_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/controllers/users_controller_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/_fields.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_user.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_user.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/users/edit.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
     </list>
@@ -44,19 +42,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sessions_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="23" selection-start="238" selection-end="257" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_controller_spec.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="users_controller_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/controllers/users_controller_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="307" column="9" selection-start="8228" selection-end="8228" vertical-scroll-proportion="0.40823328">
+            <state line="310" column="46" selection-start="8180" selection-end="8180" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -98,10 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_user.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_user.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/users/_user.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="29" selection-start="110" selection-end="110" vertical-scroll-proportion="-2.0454545">
+            <state line="4" column="13" selection-start="157" selection-end="157" vertical-scroll-proportion="0.10695187">
               <folding />
             </state>
           </provider>
@@ -148,9 +137,9 @@
         <option value="$PROJECT_DIR$/app/views/users/_fields.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/users/_user.html.erb" />
-        <option value="$PROJECT_DIR$/spec/controllers/users_controller_spec.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/spec/controllers/users_controller_spec.rb" />
+        <option value="$PROJECT_DIR$/app/views/users/_user.html.erb" />
       </list>
     </option>
   </component>
@@ -450,32 +439,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager" selected="RSpec.UsersController GET 'index' for signed-in users should show for admin user">
-    <configuration default="false" name="UsersController GET 'index' delete path for users should show for admin user" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
-      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
-      <module name="sample_app" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="RAILS_ENV" value="test" />
-      </envs>
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/spec/controllers/users_controller_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="[none]" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="UsersController GET 'index' delete path for users should show for admin user" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
-      <RunnerSettings RunnerId="RubyDebugRunner" />
-      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="RSpec.UsersController GET 'index' destroy links">
     <configuration default="false" name="UsersController GET 'index' delete path for users" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="sample_app" />
@@ -577,6 +541,31 @@
       <RunnerSettings RunnerId="RubyDebugRunner" />
       <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="UsersController GET 'index' destroy links" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="sample_app" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+      </envs>
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/spec/controllers/users_controller_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="[none]" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="UsersController GET 'index' destroy links" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
@@ -742,11 +731,11 @@
       <item index="1" class="java.lang.String" itemvalue="Rake.spec" />
       <item index="2" class="java.lang.String" itemvalue="Rails.Production: sample_app" />
       <item index="3" class="java.lang.String" itemvalue="Rails.Development: sample_app" />
-      <item index="4" class="java.lang.String" itemvalue="RSpec.UsersController GET 'index' delete path for users should show for admin user" />
-      <item index="5" class="java.lang.String" itemvalue="RSpec.UsersController GET 'index' delete path for users" />
-      <item index="6" class="java.lang.String" itemvalue="RSpec.UsersController as an admin user" />
-      <item index="7" class="java.lang.String" itemvalue="RSpec.UsersController DELETE 'destroy' as an admin user should not destroy yourself" />
-      <item index="8" class="java.lang.String" itemvalue="RSpec.UsersController GET 'index' for signed-in users should show for admin user" />
+      <item index="4" class="java.lang.String" itemvalue="RSpec.UsersController GET 'index' delete path for users" />
+      <item index="5" class="java.lang.String" itemvalue="RSpec.UsersController as an admin user" />
+      <item index="6" class="java.lang.String" itemvalue="RSpec.UsersController DELETE 'destroy' as an admin user should not destroy yourself" />
+      <item index="7" class="java.lang.String" itemvalue="RSpec.UsersController GET 'index' for signed-in users should show for admin user" />
+      <item index="8" class="java.lang.String" itemvalue="RSpec.UsersController GET 'index' destroy links" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -838,13 +827,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../.rvm/gems/ruby-1.8.7-p249/gems/actionpack-2.3.8/lib/action_controller/base.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1331" column="0" selection-start="60473" selection-end="60473" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="6" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
@@ -915,13 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/_user.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="29" selection-start="110" selection-end="110" vertical-scroll-proportion="-2.0454545">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/_fields.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="-0.0">
@@ -945,7 +920,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/controllers/users_controller_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="307" column="9" selection-start="8228" selection-end="8228" vertical-scroll-proportion="0.40823328">
+        <state line="310" column="46" selection-start="8180" selection-end="8180" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../.rvm/gems/ruby-1.8.7-p249/gems/actionpack-2.3.8/lib/action_view/helpers/url_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="217" column="10" selection-start="11243" selection-end="11243" vertical-scroll-proportion="0.33274648">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/_user.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="157" selection-end="157" vertical-scroll-proportion="0.10695187">
           <folding />
         </state>
       </provider>

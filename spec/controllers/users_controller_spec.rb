@@ -300,10 +300,43 @@ describe UsersController do
         response.should have_tag("a[href=?]", "/users?page=2", "Next &raquo;")
       end
 
+
+    end
+
+    describe "destroy links" do
+      before(:each) do
+        @user = test_sign_in(Factory(:user))
+
+        @users = [@user]
+        5.times do
+          @users << Factory(:user, :email => Factory.next(:email))
+        end
+      end
+
       it "should not show for non-admin user" do
         get :index
         @users.each do |user|
           response.should_not have_tag("a[href=?]", "/users/#{user.id}", "delete")
+        end
+      end
+
+      it "should show when admin user signed in" do
+        @user.toggle!(:admin)
+        get :index
+        @users.each do |user|
+          if (not user.admin?)
+            response.should have_tag("a[href=?]", "/users/#{user.id}", "delete")
+          end
+        end
+      end
+
+       it "should show for admin user signed in but not for admin user" do
+        @user.toggle!(:admin)
+        get :index
+        @users.each do |user|
+          if (user.admin?)
+            response.should_not have_tag("a[href=?]", "/users/#{user.id}", "delete")
+          end
         end
       end
     end
