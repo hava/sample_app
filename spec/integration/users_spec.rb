@@ -51,9 +51,6 @@ describe "Users" do
           click_link "Sign out"
           controller.should_not be_signed_in
         end
-
-
-    
       end
     end
   end

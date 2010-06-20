@@ -4,7 +4,7 @@ module SessionsHelper
     user.remember_me!
 #    cookies[:remember_token] = {:value   => user.remember_token,
 #                                :expires => 20.years.from_now.utc}
-    session[:user] = user
+    session[:user_id] = user.id
     self.current_user = user
   end
 
@@ -13,7 +13,7 @@ module SessionsHelper
   end
 
   def current_user
-    @current_user ||=  session[:user]
+    @current_user ||=  User.find_by_id(session[:user_id])
 #    @current_user ||= user_from_remember_token
   end
 
@@ -28,14 +28,14 @@ module SessionsHelper
 
   def sign_out
 #    cookies.delete(:remember_token)
-    session[:user]=nil
+    session[:user_id]=nil
     self.current_user = nil
   end
 
   def current_user?(user)
     user == current_user
   end
-  
+
   def deny_access
     store_location
     flash[:notice] = "Please sign in to access this page."
@@ -53,5 +53,9 @@ module SessionsHelper
 
   def clear_return_to
     session[:return_to] = nil
+  end
+
+  def authenticate
+    deny_access unless signed_in?
   end
 end

@@ -19,6 +19,9 @@ require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
+
+  has_many :microposts, :dependent => :destroy
+
   EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates_presence_of :name, :email
@@ -40,7 +43,7 @@ class User < ActiveRecord::Base
 
   def self.authenticate(email, submitted_password)
     user = find_by_email(email)
-    return nil  if user.nil?
+    return nil if user.nil?
     return user if user.has_password?(submitted_password)
   end
 
@@ -48,14 +51,19 @@ class User < ActiveRecord::Base
     self.remember_token = encrypt("#{salt}--#{id}--#{Time.now.utc}")
     save_without_validation
   end
-  
+
+  def feed
+    # This is preliminary. See Chapter 12 for the full implementation.
+    Micropost.all(:conditions => ["user_id = ?", id])
+  end
+
   private
   def encrypt_password
     unless password.nil?
-        self.salt = make_salt
-        self.encrypted_password = encrypt(password)
-      end
-  end     
+      self.salt = make_salt
+      self.encrypted_password = encrypt(password)
+    end
+  end
 
   def encrypt(string)
     secure_hash("#{salt}#{string}")
