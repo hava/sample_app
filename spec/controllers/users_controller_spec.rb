@@ -75,7 +75,7 @@ describe UsersController do
       response.should have_tag("h2>img", :class => "gravatar")
     end
 
-     it "should show the user's microposts" do
+    it "should show the user's microposts" do
       mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
       mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
       get :show, :id => @user
@@ -83,7 +83,25 @@ describe UsersController do
       response.should have_tag("span.content", mp2.content)
     end
 
+    describe "for signed-in users" do
 
+      before(:each) do
+         @microposts = []
+        60.times do
+          @microposts << Factory(:micropost, :user => @user)
+        end
+        @user.microposts.should_receive(:paginate).and_return(@microposts.paginate)
+      end
+
+      it "should paginate microposts" do
+        get :show , :id => @user
+        response.should have_tag("div.pagination")
+        response.should have_tag("span", "&laquo; Previous")
+        response.should have_tag("span", "1")
+        response.should have_tag("a[href=?]", "/users/1?page=2", "2")
+        response.should have_tag("a[href=?]", "/users/1?page=2", "Next &raquo;")
+      end
+    end
   end
 
   describe "POST 'create'" do
@@ -338,7 +356,7 @@ describe UsersController do
         end
       end
 
-       it "should show for admin user signed in but not for admin user" do
+      it "should show for admin user signed in but not for admin user" do
         @user.toggle!(:admin)
         get :index
         @users.each do |user|
