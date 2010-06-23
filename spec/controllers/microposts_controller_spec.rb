@@ -17,11 +17,11 @@ describe MicropostsController do
     end
   end
 
-   describe "POST 'create'" do
+  describe "POST 'create'" do
 
     before(:each) do
       @user = test_sign_in(Factory(:user))
-      @attr = { :content => "Lorem ipsum" }
+      @attr = {:content => "Lorem ipsum"}
       @micropost = Factory(:micropost, @attr.merge(:user => @user))
 
       @user.microposts.stub!(:build).and_return(@micropost)
@@ -55,7 +55,7 @@ describe MicropostsController do
         flash[:success].should =~ /micropost created/i
       end
     end
-   end
+  end
 
   describe "DELETE 'destroy'" do
 
@@ -89,4 +89,5 @@ describe MicropostsController do
       end
     end
   end
+
 end
