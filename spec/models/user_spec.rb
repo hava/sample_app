@@ -246,6 +246,7 @@ describe User do
       @user.should respond_to(:relationships)
     end
   end
+
   describe "relationships" do
 
     before(:each) do
@@ -300,6 +301,16 @@ describe User do
     it "should include the follower in the followers array" do
       @user.follow!(@followed)
       @followed.followers.include?(@user).should be_true
+    end
+
+    it "should be destroyed if user deleted" do
+      @user.follow!(@followed)
+      id = @user.id
+      Relationship.find_by_followed_id(@followed).should_not be_nil
+      Relationship.find_all_by_follower_id(@user).should_not be_nil
+      @user.destroy
+      Relationship.find_by_followed_id(@followed).should be_nil
+      Relationship.find_by_follower_id(id).should be_nil
     end
   end
 end
