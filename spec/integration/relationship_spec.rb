@@ -3,8 +3,8 @@ require 'spec_helper'
 describe "Relationships" do
 
   before(:each) do
-    @user = Factory(:user,:email => Factory.next(:email))
-    @followed = Factory(:user, :name => "Rob", :email => Factory.next(:email))
+    @user = Factory(:user,:email => "a@b.com")
+    @followed = Factory(:user, :name => "Rob", :email => "b@b.com")
     visit signin_path
     click_button
   end
